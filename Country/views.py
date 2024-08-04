@@ -102,9 +102,10 @@ class UpdateCountry(View):
             countryobj.is_state_available = state_available
         else:
             countryobj.is_state_available = True
-            countryobj.save()
-            messages.success(request, "Country updated successfully!")
-            return redirect('/')
+            
+        countryobj.save()
+        messages.success(request, "Country updated successfully!")
+        return redirect('/')
     
 #create state
 class StateView(View):
